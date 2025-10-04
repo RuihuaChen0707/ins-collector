@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Card, Button, Row, Col, Statistic, Spin, Alert, DatePicker, Space, Tag, Timeline } from 'antd';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { TrendingUpOutlined, SyncOutlined, CalendarOutlined, RiseOutlined, FallOutlined } from '@ant-design/icons';
+import { LineChartOutlined, SyncOutlined, CalendarOutlined, ArrowUpOutlined, ArrowDownOutlined } from '@ant-design/icons';
 import { analysisAPI } from '@/services/api';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, BarChart, Bar } from 'recharts';
 import dayjs from 'dayjs';
@@ -100,11 +100,11 @@ export default function TrendAnalysis() {
   const getTrendIcon = (trend: string) => {
     switch (trend) {
       case 'up':
-        return <RiseOutlined style={{ color: '#10b981' }} />;
+        return <ArrowUpOutlined style={{ color: '#10b981' }} />;
       case 'down':
-        return <FallOutlined style={{ color: '#ef4444' }} />;
+        return <ArrowDownOutlined style={{ color: '#ef4444' }} />;
       default:
-        return <TrendingUpOutlined style={{ color: '#6b7280' }} />;
+        return <LineChartOutlined style={{ color: '#6b7280' }} />;
     }
   };
 
